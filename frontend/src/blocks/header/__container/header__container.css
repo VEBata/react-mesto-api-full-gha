@@ -1,0 +1,17 @@
+.header__container {
+	display: flex;
+	flex-basis: 50%;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 580px){
+	.header__container {
+		min-height: 56px;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.header__container.active {
+		margin: 27px 0 0;
+	}
+}

@@ -1,0 +1,16 @@
+.profile__info {
+	margin: 28px auto 25px 30px;
+	min-width: 336px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+@media screen and (max-width: 699px) {
+	.profile__info {
+		margin: 26px 0 0;
+		row-gap: 8px;
+		min-width: 282px;
+		text-align: center;
+	}
+}

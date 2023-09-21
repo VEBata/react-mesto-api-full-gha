@@ -1,0 +1,24 @@
+.header__nav {
+	background-color: #000000;
+	transition: .5s;
+	overflow: auto;
+	display: flex;
+	justify-content: end;
+	flex-basis: 50%;
+}
+
+@media screen and (max-width: 580px){
+	.header__nav {
+		max-height: 0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.header__nav.active {
+		max-height: 142px;
+		border-bottom: 1px solid rgba(54, 54, 54, .7);
+	}
+}

@@ -1,0 +1,11 @@
+.login__submit-button_disabled {
+	background: #000000;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	opacity: .4;
+	cursor: default;
+}
+
+.login__submit-button_disabled:hover {
+	opacity: .4;
+}

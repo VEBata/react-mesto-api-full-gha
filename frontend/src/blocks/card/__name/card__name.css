@@ -1,0 +1,6 @@
+.card__name {
+	display: flex;
+	justify-content: space-between;
+	min-width: 246px;
+	margin: 22px 15px 22px 21px;
+}

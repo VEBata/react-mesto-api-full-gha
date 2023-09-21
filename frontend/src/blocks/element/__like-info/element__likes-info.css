@@ -1,0 +1,6 @@
+.element__likes-info{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+  }
+  

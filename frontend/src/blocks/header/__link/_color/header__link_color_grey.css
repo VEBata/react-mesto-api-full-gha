@@ -1,0 +1,18 @@
+.header__link_color_grey {
+	color: #A9A9A9;
+}
+
+@media screen and (max-width: 920px) {
+	.header__link_color_grey {
+		margin: 6px 27px 0 0;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.header__link_color_grey {
+		margin: 18px 0 40px;
+		font-size: 18px;
+		line-height: 22px;
+		max-height: 22px;
+	}
+}
