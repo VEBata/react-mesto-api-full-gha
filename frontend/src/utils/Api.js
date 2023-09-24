@@ -1,3 +1,5 @@
+const BASE_URL = process.env.REACT_APP_API_URL
+
 class Api {
 	constructor(options) {
 		this._url = options.url;
@@ -16,17 +18,18 @@ class Api {
 	}
 
 	getDataCards() {
-		return this._request('/cards', { headers: this._headers })
+		return this._request('/cards', { headers: this._headers, credentials: "include" })
 	}
 
 	getDataUser() {
-		return this._request('/users/me', { headers: this._headers })
+		return this._request('/users/me', { headers: this._headers, credentials: "include" })
 	}
 
 	setDataUser(data) {
 		return this._request('/users/me', {
 			method: 'PATCH',
 			headers: this._headers,
+			credentials: "include",
 			body: JSON.stringify({
 				name: data.name,
 				about: data.about })
@@ -37,6 +40,7 @@ class Api {
 		return this._request('/users/me/avatar', {
 			method: 'PATCH',
 			headers: this._headers,
+			credentials: "include",
 			body: JSON.stringify(avatar)
 		})
 	}
@@ -45,6 +49,7 @@ class Api {
 		return this._request('/cards', {
 			method: 'POST',
 			headers: this._headers,
+			credentials: "include",
 			body: JSON.stringify(card)
 		})
 	}
@@ -52,6 +57,7 @@ class Api {
 	deleteCard(cardId) {
 		return this._request(`/cards/${cardId}`, {
 			method: 'DELETE',
+			credentials: "include",
 			headers: this._headers
 		})
 	}
@@ -59,15 +65,16 @@ class Api {
 	changeLikeCardStatus(cardId, isLiked) {
 		return this._request(`/cards/${cardId}/likes`, {
 			method: isLiked ? "DELETE" : "PUT",
+			credentials: "include",
 			headers: this._headers,
 		})
 	}
 }
 
 export const api = new Api({
-	url: 'https://mesto.nomoreparties.co/v1/cohort-68',
+	url: BASE_URL,
+	credentials: "include",
 	headers: {
-		authorization: 'e0cc1650-18be-49f9-89e7-3eeb4201f8b2',
 		'Content-Type': 'application/json',
 	}
 })

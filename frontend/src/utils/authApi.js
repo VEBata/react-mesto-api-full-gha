@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co'
+const BASE_URL = process.env.REACT_APP_API_URL
 
 const checkResponse = (res) => {
 	if (res.ok) {
@@ -10,7 +10,9 @@ const checkResponse = (res) => {
 export const registration = ({ email, password }) => {
 	return fetch(`${BASE_URL}/signup`, {
 		method: "POST",
+		credentials: 'include',
 		headers: {
+			"Accept": "application/json",
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({ password, email }),
@@ -22,7 +24,9 @@ export const registration = ({ email, password }) => {
 export const authorization = ({ email, password }) => {
 	return fetch(`${BASE_URL}/signin`, {
 		method: "POST",
+		credentials: 'include',
 		headers: {
+			"Accept": "application/json",
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({ password, email }),
@@ -30,12 +34,25 @@ export const authorization = ({ email, password }) => {
 	.then(checkResponse);
 }
 
-export const getContent = (token) => {
+export const signOut = () => {
+	return fetch(`${BASE_URL}/signout`, {
+		method: "DELETE",
+		credentials: 'include',
+		headers: {
+			"Accept": "application/json",
+			"Content-Type": "application/json"
+		},
+	})
+		.then(checkResponse);
+}
+
+export const getContent = () => {
 	return fetch(`${BASE_URL}/users/me`, {
 		method: "GET",
+		credentials: "include",
 		headers: {
-			"Content-Type": "application/json",
-			"Authorization": `Bearer ${token}`
+			"Accept": "application/json",
+			"Content-Type": "application/json"
 		},
 	})
 	.then(checkResponse);

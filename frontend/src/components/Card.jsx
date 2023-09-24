@@ -3,10 +3,10 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 export const Card = ({ card, onCardLike, onCardDelete, onCardClick }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = card.owner._id === currentUser._id;
-  const isLiked = card.likes.some((i) => i._id === currentUser._id);
-  const cardLikeButtonClassName = `element__button ${
-    isLiked && "element__button-active"
+  const isOwn = card.owner === currentUser._id;
+  const isLiked = card.likes.some((i) => i === currentUser._id);
+  const cardLikeButtonClassName = `card__button_like ${
+    isLiked && "card__button_like_active"
   }`;
 
   const handleLikeClick = () => {
@@ -18,32 +18,32 @@ export const Card = ({ card, onCardLike, onCardDelete, onCardClick }) => {
   };
 
   return (
-    <li className="element">
+    <li className="card">
       <img
         src={card.link}
         alt={card.name}
-        className="element__img"
+        className="card__image"
         onClick={() => {
           onCardClick(card);
         }}
       />
-      <div className="element__item">
-        <h2 className="element__text">{card.name}</h2>
-        <div className="element__likes-info">
+      <div className="card__name">
+        <h2 className="card__title">{card.name}</h2>
+        <div className="card__like-container">
           <button
-            aria-label="мне нравится"
+            aria-label="Мне нравтся"
             type="button"
             className={cardLikeButtonClassName}
             onClick={handleLikeClick}
           />
-          <p className="element__counter-likes">{card.likes.length}</p>
+          <p className="card__like-counter">{card.likes.length}</p>
         </div>
       </div>
       {isOwn && (
         <button
           aria-label="Удалить"
           type="button"
-          className="element__button_basket"
+          className="card__button_delete"
           onClick={handleDeleteClick}
         />
       )}
