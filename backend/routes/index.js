@@ -4,12 +4,10 @@ const userRouter = require('./users');
 const cardRouter = require('./cards');
 const signupRouter = require('./signup');
 const signinRouter = require('./signin');
-const signoutRouter = require('./signout');
 const { notFound } = require('../controllers/notFound');
 
 router.use(signupRouter);
 router.use(signinRouter);
-router.use(signoutRouter);
 router.use(auth);
 router.use(userRouter);
 router.use(cardRouter);

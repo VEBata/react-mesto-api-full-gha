@@ -3,13 +3,13 @@ body {
 }
 
 @import url(./vendor/normalize.css);
-
+/*Шрифт*/
 @import url(./fonts/fonts.css);
-
+/*Блок page*/
 @import url(./blocks/page/page.css);
 @import url(./blocks/page/__container/page__container.css);
 @import url(./blocks/page/__header/page__header.css);
-
+/*Блок header*/
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__container/header__container.css);
 @import url(./blocks/header/__container/_wide/header__container_wide.css);
@@ -19,9 +19,9 @@ body {
 @import url(./blocks/header/__link/header__link.css);
 @import url(./blocks/header/__link/_color/header__link_color_grey.css);
 @import url(./blocks/header/__email/header__email.css);
-
+/*Блок content*/
 @import url(./blocks/content/__profile/content__profile.css);
-
+/*Блок profile*/
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__avatar-edit-button/profile__avatar-edit-button.css);
 @import url(./blocks/profile/__avatar/profile__avatar.css);
@@ -31,21 +31,23 @@ body {
 @import url(./blocks/profile/__edit-button/profile__edit-button.css);
 @import url(./blocks/profile/__opsane/profile__opsane.css);
 @import url(./blocks/profile/__add-button/profile__add-button.css);
-
-@import url(./blocks/elements/elements.css);
-
-@import url(./blocks/element/element.css);
-@import url(./blocks/element/__img/element__img.css);
-@import url(./blocks/element/__item/element__item.css);
-@import url(./blocks/element/__text/element__text.css);
-@import url(./blocks/element/__button/element__button.css);
-@import url(./blocks/element/__button-basket/element__button-basket.css);
-@import url(./blocks/element/__like-info/element__likes-info.css);
-@import url(./blocks/element/__counter-likes/element__counter-likes.css);
-
+/*Блок cards*/
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/cards/__container/cards__container.css);
+/*Блок card*/
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__image/card__image.css);
+@import url(./blocks/card/__name/card__name.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__like-container/card__like-container.css);
+@import url(./blocks/card/__button/_like/card__button_like.css);
+@import url(./blocks/card/__like-counter/card__like-counter.css);
+@import url(./blocks/card/__button/_like/_active/card__button_like_active.css);
+@import url(./blocks/card/__button/_delete/card__button_delete.css);
+/*Блок footer*/
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
-
+/*Блок popup*/
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_type/_image/popup_image.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
@@ -66,7 +68,7 @@ body {
 @import url(./blocks/popup/__caption/popup__caption.css);
 @import url(./blocks/popup/__icon/popup__icon.css);
 @import url(./blocks/popup/__text/popup__text.css);
-
+/*Блок login*/
 @import url(./blocks/login/login.css);
 @import url(./blocks/login/__title/login__title.css);
 @import url(./blocks/login/__form/login__form.css);
@@ -74,6 +76,6 @@ body {
 @import url(./blocks/login/__submit-button/login__submit-button.css);
 @import url(./blocks/login/__submit-button/_disabled/login__submit-button_disabled.css);
 @import url(./blocks/login/__link/login__link.css);
-
+/*Блок inputError*/
 @import url(./blocks/inputError/inputError.css);
 @import url(./blocks/inputError/_visible/inputError_visible.css);

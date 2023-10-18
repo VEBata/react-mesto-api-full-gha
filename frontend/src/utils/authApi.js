@@ -10,9 +10,7 @@ const checkResponse = (res) => {
 export const registration = ({ email, password }) => {
 	return fetch(`${BASE_URL}/signup`, {
 		method: "POST",
-		credentials: 'include',
 		headers: {
-			"Accept": "application/json",
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({ password, email }),
@@ -24,9 +22,7 @@ export const registration = ({ email, password }) => {
 export const authorization = ({ email, password }) => {
 	return fetch(`${BASE_URL}/signin`, {
 		method: "POST",
-		credentials: 'include',
 		headers: {
-			"Accept": "application/json",
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({ password, email }),
@@ -34,25 +30,12 @@ export const authorization = ({ email, password }) => {
 	.then(checkResponse);
 }
 
-export const signOut = () => {
-	return fetch(`${BASE_URL}/signout`, {
-		method: "DELETE",
-		credentials: 'include',
-		headers: {
-			"Accept": "application/json",
-			"Content-Type": "application/json"
-		},
-	})
-		.then(checkResponse);
-}
-
-export const getContent = () => {
+export const getContent = (token) => {
 	return fetch(`${BASE_URL}/users/me`, {
 		method: "GET",
-		credentials: "include",
 		headers: {
-			"Accept": "application/json",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			'Authorization': `Bearer ${token}`
 		},
 	})
 	.then(checkResponse);
