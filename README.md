@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-<!-- IP 158.160.104.202 -->
+IP 84.201.135.110
 
-Frontend https://...
+Frontend https://vebata.nomoredomainsrocks.ru
 
-Backend https://...
+Backend https://api.vebata.nomoredomainsrocks.ru
